@@ -23,32 +23,32 @@ jobs:
     # Rename Artifact
     - if: startsWith(matrix.os,'ubuntu')
       name: Rename binary
-      run: mv bin/PassCoder2 bin/PassCoder2-linux-x86
+      run: mv bin/PassCoder2 bin/PassCoder2-linux-x64
     - if: startsWith(matrix.os, 'macOS')
       name: Rename binary
-      run: mv bin/PassCoder2 bin/PassCoder2-macos-x86
+      run: mv bin/PassCoder2 bin/PassCoder2-macos-x64
     - if: startsWith(matrix.os, 'windows')
       name: Rename binary
-      run: mv bin/Release/PassCoder2.exe bin/Release/PassCoder2-windows-x86.exe
+      run: mv bin/Release/PassCoder2.exe bin/Release/PassCoder2-windows-x64.exe
     # Uploading Artifact
     - if: startsWith(matrix.os,'ubuntu')
       name: Upload binary
       uses: actions/upload-artifact@v2
       with:
-        name: PassCoder2-linux-x86
-        path: bin/PassCoder2-linux-x86
+        name: PassCoder2-linux-x64
+        path: bin/PassCoder2-linux-x64
     - if: startsWith(matrix.os, 'macOS')
       name: Upload binary
       uses: actions/upload-artifact@v2
       with:
-        name: PassCoder2-macos-x86
-        path: bin/PassCoder2-macos-x86
+        name: PassCoder2-macos-x64
+        path: bin/PassCoder2-macos-x64
     - if: startsWith(matrix.os, 'windows')
       name: Upload binary
       uses: actions/upload-artifact@v2
       with:
-        name: PassCoder2-windows-x86
-        path: bin/Release/PassCoder2-windows-x86.exe
+        name: PassCoder2-windows-x64
+        path: bin/Release/PassCoder2-windows-x64.exe
 
   release-upload:
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
@@ -60,18 +60,18 @@ jobs:
     - uses: actions/download-artifact@master
       name: Download Artifact Windows
       with:
-        name: PassCoder2-windows-x86
-        path: PassCoder2-windows-x86
+        name: PassCoder2-windows-x64
+        path: PassCoder2-windows-x64
     - uses: actions/download-artifact@master
       name: Download Artifact Linux
       with:
-        name: PassCoder2-linux-x86
-        path: PassCoder2-linux-x86
+        name: PassCoder2-linux-x64
+        path: PassCoder2-linux-x64
     - uses: actions/download-artifact@master
       name: Download Artifact MacOS
       with:
-        name: PassCoder2-macos-x86
-        path: PassCoder2-macos-x86
+        name: PassCoder2-macos-x64
+        path: PassCoder2-macos-x64
     - name: Create release
       uses: Roang-zero1/github-create-release-action@master
       env:
@@ -80,8 +80,8 @@ jobs:
       uses: Roang-zero1/github-upload-release-artifacts-action@master
       with:
         args:
-          PassCoder2-windows-x86
-          PassCoder2-linux-x86
-          PassCoder2-macos-x86
+          PassCoder2-windows-x64
+          PassCoder2-linux-x64
+          PassCoder2-macos-x64
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
