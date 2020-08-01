@@ -1,6 +1,7 @@
 </br>
 
-[![Actions Status](https://github.com/Coldragon/PassCoder2/workflows/Build/badge.svg)](https://github.com/Coldragon/PassCoder2/actions)  <a href="https://github.com/Coldragon/PassCoder2/releases"><img src="https://img.shields.io/github/v/release/coldragon/PassCoder2.svg"></a>  <a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg"></a>
+[![Actions Status](https://github.com/Coldragon/PassCoder2/workflows/Build/badge.svg)](https://github.com/Coldragon/PassCoder2/actions) [![Actions Status](https://img.shields.io/github/v/release/coldragon/PassCoder2.svg)](https://github.com/Coldragon/PassCoder2/releases) [![Actions Status](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE.md)
+
 # PassCoder2
 Passcoder2 is a simple C99 crossplatform cli database-less password manager. You just have to remember a passphrase and use a tag to recover your password. The tag can be the website name, your email adresse or anything.
 
