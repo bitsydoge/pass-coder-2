@@ -27,7 +27,6 @@
     <ClCompile Include="External\argon2\thread.c" />
     <ClCompile Include="External\Argtable3\argtable3.c" />
     <ClCompile Include="External\rlutil\rlutil.c" />
-    <ClCompile Include="Sources\pc2_chaos.c" />
     <ClCompile Include="Sources\pc2_cli.c" />
     <ClCompile Include="Sources\pc2_config.c" />
     <ClCompile Include="Sources\pc2_core.c" />
@@ -40,7 +39,6 @@
     <ClInclude Include="External\argon2\thread.h" />
     <ClInclude Include="External\Argtable3\argtable3.h" />
     <ClInclude Include="External\rlutil\rlutil.h" />
-    <ClInclude Include="Sources\pc2_chaos.h" />
     <ClInclude Include="Sources\pc2_config.h" />
     <ClInclude Include="Sources\pc2_core.h" />
   </ItemGroup>

@@ -51,9 +51,6 @@
     <ClCompile Include="Sources\pc2_config.c">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\pc2_chaos.c">
-      <Filter>Sources</Filter>
-    </ClCompile>
     <ClCompile Include="External\rlutil\rlutil.c">
       <Filter>External\rlutil</Filter>
     </ClCompile>
@@ -81,9 +78,6 @@
       <Filter>Sources</Filter>
     </ClInclude>
     <ClInclude Include="Sources\pc2_config.h">
-      <Filter>Sources</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\pc2_chaos.h">
       <Filter>Sources</Filter>
     </ClInclude>
     <ClInclude Include="External\rlutil\rlutil.h">

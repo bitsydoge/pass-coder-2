@@ -16,7 +16,19 @@
 #define STRDUP strdup
 #endif
 
-pc2_hash_pass_t hash_pass_create_from_user_input(char* field_name)
+char symbole[] = PC2_SYMBOLES;
+
+pc2_password_t pc2_password_generate(pc2_hash_pass_t* hp)
+{
+	pc2_password_t final = { 0 };
+	for (int i = 0; i < PC2_HASHLEN; i += 1)
+	{
+		final.array[i] = symbole[hp->output[i] % PC2_SYMBOLES_LEN];
+	}
+	return final;
+}
+
+pc2_hash_pass_t pc2_hash_pass_create_from_user_input(char* field_name)
 {
 	setColor(GREEN);
 	printf("%s : ", field_name);
@@ -31,7 +43,7 @@ pc2_hash_pass_t hash_pass_create_from_user_input(char* field_name)
 	return hp;
 }
 
-pc2_hash_pass_t hash_pass_create_manually(uint8_t* r_input)
+pc2_hash_pass_t pc2_hash_pass_create_manually(uint8_t* r_input)
 {
 	pc2_hash_pass_t hp = { 0 };
 	hp.input = (uint8_t*)STRDUP((char*)r_input);
@@ -71,7 +83,7 @@ pc2_hash_pass_t pc2_hash_pass_get_final(pc2_hash_pass_t* r_hp_passphrase, pc2_ha
 {
 	pc2_hash_pass_process(r_hp_passphrase);
 	pc2_hash_pass_process(r_hp_tag);
-	pc2_hash_pass_t final_hash = hash_pass_create_manually(r_hp_passphrase->output);
+	pc2_hash_pass_t final_hash = pc2_hash_pass_create_manually(r_hp_passphrase->output);
 	pc2_hash_pass_set_salt(&final_hash, r_hp_tag->output);
 	pc2_hash_pass_process(&final_hash);
 	return final_hash;
@@ -80,7 +92,6 @@ pc2_hash_pass_t pc2_hash_pass_get_final(pc2_hash_pass_t* r_hp_passphrase, pc2_ha
 #if defined(PC2_OS_IS_WINDOWS)
 void pc2_check_run_from_console()
 {
-	puts("");
 	HWND console_wnd = GetConsoleWindow();
 	DWORD dw_process_id;
 	GetWindowThreadProcessId(console_wnd, &dw_process_id);
