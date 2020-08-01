@@ -45,6 +45,9 @@
     <ClCompile Include="Sources\pc2_core.c">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\pc2_config.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\Argtable3\argtable3.h">

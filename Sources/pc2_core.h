@@ -27,4 +27,4 @@ void pc2_check_run_from_console();
 #define pc2_check_run_from_console()
 #endif
 
-#endif // CORE_H
+#endif // PC2_CORE_H

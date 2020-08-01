@@ -12,4 +12,10 @@
 #define PC2_MEM_COST (1 << 16)
 #define PC2_PARRALEL_COST 32
 
+#define PC2_VERSION "0.1"
+#define PC2_PROG_EXEC_NAME "PassCoder2.exe"
+
+void set_verbose(const int p_value);
+int get_verbose();
+
 #endif // PC2_CONFIG_H
