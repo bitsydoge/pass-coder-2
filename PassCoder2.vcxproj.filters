@@ -4,17 +4,71 @@
     <Filter Include="Sources">
       <UniqueIdentifier>{6779df79-52cd-4f06-816b-671d70d364cc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="External">
+      <UniqueIdentifier>{8b12e3ad-a6a1-47eb-a4c9-55026f948d1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\argtable3">
+      <UniqueIdentifier>{379004c2-e66a-4e6c-9271-c9eaa1ddb47f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\argon2">
+      <UniqueIdentifier>{b0e6686f-2b8a-41a8-b76c-54fb24116f32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\argon2\blake2">
+      <UniqueIdentifier>{23477b82-a4a7-4803-af49-3e22bcee2b1c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\cli.c">
+    <ClCompile Include="External\Argtable3\argtable3.c">
+      <Filter>External\argtable3</Filter>
+    </ClCompile>
+    <ClCompile Include="External\argon2\argon2.c">
+      <Filter>External\argon2</Filter>
+    </ClCompile>
+    <ClCompile Include="External\argon2\core.c">
+      <Filter>External\argon2</Filter>
+    </ClCompile>
+    <ClCompile Include="External\argon2\encoding.c">
+      <Filter>External\argon2</Filter>
+    </ClCompile>
+    <ClCompile Include="External\argon2\ref.c">
+      <Filter>External\argon2</Filter>
+    </ClCompile>
+    <ClCompile Include="External\argon2\thread.c">
+      <Filter>External\argon2</Filter>
+    </ClCompile>
+    <ClCompile Include="External\argon2\blake2\blake2b.c">
+      <Filter>External\argon2\blake2</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\pc2_cli.c">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\core.c">
+    <ClCompile Include="Sources\pc2_core.c">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sources\core.h">
+    <ClInclude Include="External\Argtable3\argtable3.h">
+      <Filter>External\argtable3</Filter>
+    </ClInclude>
+    <ClInclude Include="External\argon2\core.h">
+      <Filter>External\argon2</Filter>
+    </ClInclude>
+    <ClInclude Include="External\argon2\encoding.h">
+      <Filter>External\argon2</Filter>
+    </ClInclude>
+    <ClInclude Include="External\argon2\thread.h">
+      <Filter>External\argon2</Filter>
+    </ClInclude>
+    <ClInclude Include="External\argon2\blake2\blake2.h">
+      <Filter>External\argon2\blake2</Filter>
+    </ClInclude>
+    <ClInclude Include="External\argon2\blake2\blake2-impl.h">
+      <Filter>External\argon2\blake2</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\pc2_core.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\pc2_config.h">
       <Filter>Sources</Filter>
     </ClInclude>
   </ItemGroup>
