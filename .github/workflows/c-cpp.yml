@@ -16,7 +16,18 @@ jobs:
       run: cmake .  
     - name: make
       run: make
-      
+    - if: startsWith(matrix.os,'ubuntu')
+      name: Upload binary
+      uses: actions/upload-artifact@v2
+      with:
+        name: PassCoder2-linux-x86
+        path: bin/PassCoder2
+    - if: startsWith(matrix.os, 'macOS')
+      name: Upload binary
+      uses: actions/upload-artifact@v2
+      with:
+        name: PassCoder2-macos-x86
+        path: bin/PassCoder2
   win-build:
     name: Test on windows-latest
     runs-on: windows-latest
@@ -27,3 +38,8 @@ jobs:
       run: cmake .  
     - name: make
       run: cmake --build . --target ALL_BUILD --config Release -- /nologo /verbosity:minimal /maxcpucount
+    - name: Upload binary
+      uses: actions/upload-artifact@v2
+      with:
+        name: PassCoder2-windows-x86
+        path: bin/Release/PassCoder2.exe
