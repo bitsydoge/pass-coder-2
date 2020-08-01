@@ -15,7 +15,7 @@
 #define PC2_VERSION "0.1"
 #define PC2_PROG_EXEC_NAME "PassCoder2.exe"
 
-void set_verbose(const int p_value);
-int get_verbose();
+void pc2_set_verbose(int p_value);
+int pc2_get_verbose();
 
 #endif // PC2_CONFIG_H

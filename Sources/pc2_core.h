@@ -7,6 +7,7 @@
 
 struct pc2_hash_pass
 {
+	int is_empty;
 	uint8_t* input;
 	uint32_t input_len;
 	uint8_t output[PC2_HASHLEN];
@@ -16,6 +17,7 @@ struct pc2_hash_pass
 
 pc2_hash_pass_t hash_pass_create_from_user_input(char* field_name);
 pc2_hash_pass_t hash_pass_create_manually(uint8_t* r_input);
+pc2_hash_pass_t pc2_hash_pass_get_final(pc2_hash_pass_t* r_hp_passphrase, pc2_hash_pass_t* r_hp_tag);
 void pc2_hash_pass_set_salt(pc2_hash_pass_t* r_hp, uint8_t* r_salt);
 void pc2_hash_pass_print(pc2_hash_pass_t* r_hp);
 void pc2_hash_pass_process(pc2_hash_pass_t* r_hp);

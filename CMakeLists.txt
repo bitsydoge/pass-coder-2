@@ -19,8 +19,10 @@ string(REGEX REPLACE "CMakeFiles/[^;]+;?" "" SOURCES "${SOURCES}")
 string(REGEX REPLACE "CMakeFiles/[^;]+;?" "" EXTERNAL "${EXTERNAL}")
 include_directories(${CMAKE_BINARY_DIR}/External/argon2)
 include_directories(${CMAKE_BINARY_DIR}/External/argtable3)
+include_directories(${CMAKE_BINARY_DIR}/External/rlutil)
 
 add_executable(PassCoder2 ${SOURCES} ${EXTERNAL})
+set_target_properties(PassCoder2 PROPERTIES C_STANDARD 99)
 
 IF (NOT WIN32)
 	target_link_libraries(PassCoder2 pthread m)

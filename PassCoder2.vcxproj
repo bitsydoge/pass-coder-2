@@ -26,6 +26,8 @@
     <ClCompile Include="External\argon2\ref.c" />
     <ClCompile Include="External\argon2\thread.c" />
     <ClCompile Include="External\Argtable3\argtable3.c" />
+    <ClCompile Include="External\rlutil\rlutil.c" />
+    <ClCompile Include="Sources\pc2_chaos.c" />
     <ClCompile Include="Sources\pc2_cli.c" />
     <ClCompile Include="Sources\pc2_config.c" />
     <ClCompile Include="Sources\pc2_core.c" />
@@ -37,6 +39,8 @@
     <ClInclude Include="External\argon2\encoding.h" />
     <ClInclude Include="External\argon2\thread.h" />
     <ClInclude Include="External\Argtable3\argtable3.h" />
+    <ClInclude Include="External\rlutil\rlutil.h" />
+    <ClInclude Include="Sources\pc2_chaos.h" />
     <ClInclude Include="Sources\pc2_config.h" />
     <ClInclude Include="Sources\pc2_core.h" />
   </ItemGroup>
@@ -94,26 +98,27 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)\external\argon2\;$(SolutionDir)\external\Argtable3;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(SolutionDir)\external\argon2\;$(SolutionDir)\external\Argtable3;$(IncludePath);$(SolutionDir)\external\rlutil\</IncludePath>
     <OutDir>$(SolutionDir)Builds\x86\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Builds\.temp\x86\$(Configuration)\$(ProjectName)\</IntDir>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);C:\Program Files (x86)\Visual Leak Detector\lib\Win32</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)\external\argon2\;$(SolutionDir)\external\Argtable3;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\external\argon2\;$(SolutionDir)\external\Argtable3;$(IncludePath);$(SolutionDir)\external\rlutil\</IncludePath>
     <OutDir>$(SolutionDir)Builds\x86\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Builds\.temp\x86\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)\external\argon2\;$(SolutionDir)\external\Argtable3;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Dev\PassCoder2\external\Argon2\libs\x64\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(SolutionDir)\external\argon2\;$(SolutionDir)\external\Argtable3;$(IncludePath);$(SolutionDir)\external\rlutil\</IncludePath>
+    <LibraryPath>$(LibraryPath);C:\Program Files (x86)\Visual Leak Detector\lib\Win64</LibraryPath>
     <OutDir>$(SolutionDir)Builds\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Builds\.temp\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)\external\argon2\;$(SolutionDir)\external\Argtable3;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\external\argon2\;$(SolutionDir)\external\Argtable3;$(IncludePath);$(SolutionDir)\external\rlutil\</IncludePath>
     <LibraryPath>C:\Dev\PassCoder2\external\Argon2\libs\x64\Release;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Builds\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Builds\.temp\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
@@ -122,12 +127,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;PC2_USE_VLD;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -152,12 +157,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;PC2_USE_VLD;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

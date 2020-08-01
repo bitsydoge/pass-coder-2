@@ -16,6 +16,9 @@
     <Filter Include="External\argon2\blake2">
       <UniqueIdentifier>{23477b82-a4a7-4803-af49-3e22bcee2b1c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="External\rlutil">
+      <UniqueIdentifier>{6554e335-88ae-40d3-b2fd-c59a188ce9b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="External\Argtable3\argtable3.c">
@@ -48,6 +51,12 @@
     <ClCompile Include="Sources\pc2_config.c">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\pc2_chaos.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="External\rlutil\rlutil.c">
+      <Filter>External\rlutil</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\Argtable3\argtable3.h">
@@ -73,6 +82,12 @@
     </ClInclude>
     <ClInclude Include="Sources\pc2_config.h">
       <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\pc2_chaos.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="External\rlutil\rlutil.h">
+      <Filter>External\rlutil</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -11,11 +11,13 @@ Passcoder2 is a simple cli database-less password manager. You just have to reme
 Just run the cli and you'll be prompted to write your passphrase and tag.
 There is also some parameters that can be input.
 ```
-usage: PassCoder2.exe [-hv] [--version]
+usage: PassCoder2.exe [-hv] [<tag>] [-p <passphrase>] [--version]
 
-  -h, --help                display this help
-  --version                 display version info and exit
+  <tag>                     target tag
+  -p, --pass=<passphrase>   private passphrase
+  -h, --help                display this help and exit
   -v, --verbose             verbose output and exit
+  --version                 display version info and exit
 ```
 
 # External Library

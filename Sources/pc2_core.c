@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "rlutil.h"
+
 #if defined(PC2_OS_IS_WINDOWS)
 #include <windows.h>
 #endif
@@ -16,10 +18,13 @@
 
 pc2_hash_pass_t hash_pass_create_from_user_input(char* field_name)
 {
+	setColor(GREEN);
 	printf("%s : ", field_name);
+	resetColor();
 	char input_buffer[4096];
 	fflush(stdin);
 	fgets(input_buffer, sizeof(input_buffer), stdin);
+	input_buffer[strcspn(input_buffer, "\n")] = 0;
 	pc2_hash_pass_t hp = { 0 };
 	hp.input = (uint8_t*)STRDUP(input_buffer);
 	hp.input_len = strlen((char*)hp.input);
@@ -60,6 +65,16 @@ void pc2_hash_pass_process(pc2_hash_pass_t* r_hp)
 void pc2_hash_pass_clean(pc2_hash_pass_t* r_hp)
 {
 	free(r_hp->input);
+}
+
+pc2_hash_pass_t pc2_hash_pass_get_final(pc2_hash_pass_t* r_hp_passphrase, pc2_hash_pass_t* r_hp_tag)
+{
+	pc2_hash_pass_process(r_hp_passphrase);
+	pc2_hash_pass_process(r_hp_tag);
+	pc2_hash_pass_t final_hash = hash_pass_create_manually(r_hp_passphrase->output);
+	pc2_hash_pass_set_salt(&final_hash, r_hp_tag->output);
+	pc2_hash_pass_process(&final_hash);
+	return final_hash;
 }
 
 #if defined(PC2_OS_IS_WINDOWS)
