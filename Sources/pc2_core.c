@@ -68,7 +68,7 @@ void pc2_hash_pass_process(pc2_hash_pass_t* r_hp)
 		PC2_PARRALEL_COST,
 		r_hp->input,
 		r_hp->input_len,
-		PC2_BASE_SALT,
+		r_hp->salt,
 		PC2_SALTLEN,
 		r_hp->output,
 		PC2_HASHLEN
@@ -85,6 +85,7 @@ pc2_hash_pass_t pc2_hash_pass_get_final(pc2_hash_pass_t* r_hp_passphrase, pc2_ha
 	pc2_hash_pass_process(r_hp_tag);
 	pc2_hash_pass_t final_hash = pc2_hash_pass_create_manually(r_hp_passphrase->output);
 	pc2_hash_pass_set_salt(&final_hash, r_hp_tag->output);
+	
 	pc2_hash_pass_process(&final_hash);
 	return final_hash;
 }
