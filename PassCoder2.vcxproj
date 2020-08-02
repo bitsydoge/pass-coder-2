@@ -28,7 +28,6 @@
     <ClCompile Include="External\Argtable3\argtable3.c" />
     <ClCompile Include="External\rlutil\rlutil.c" />
     <ClCompile Include="Sources\pc2_cli.c" />
-    <ClCompile Include="Sources\pc2_config.c" />
     <ClCompile Include="Sources\pc2_core.c" />
   </ItemGroup>
   <ItemGroup>

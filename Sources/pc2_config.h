@@ -1,4 +1,4 @@
-#ifndef PC2_CONFIG_H
+﻿#ifndef PC2_CONFIG_H
 #define PC2_CONFIG_H
 
 #define PC2_OS_UNDEFINED 0
@@ -20,8 +20,5 @@
 #define PC2_PARRALEL_COST 32
 #define PC2_VERSION "0.1"
 #define PC2_PROG_EXEC_NAME "PassCoder2"
-
-void pc2_set_verbose(int p_value);
-int pc2_get_verbose();
 
 #endif // PC2_CONFIG_H

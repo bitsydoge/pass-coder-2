@@ -11,6 +11,8 @@
 
 pc2_hash_pass_t pc2_argtable_config(int argc, char** argv);
 
+int pc2_is_verbose = 0;
+
 int main(int argc, char ** argv)
 {
 	saveDefaultColor();
@@ -18,7 +20,7 @@ int main(int argc, char ** argv)
 
 	if(hash_final.is_empty == 0)
 	{
-		if (pc2_get_verbose())
+		if (pc2_is_verbose)
 		{
 			setColor(CYAN);
 			printf("Hash Password \t: ");
@@ -91,7 +93,7 @@ pc2_hash_pass_t pc2_argtable_config(int argc, char** argv)
 		}
 		else
 		{
-			pc2_set_verbose(verbose->count > 0 ? 1 : 0);
+			pc2_is_verbose = verbose->count > 0 ? 1 : 0;
 			pc2_hash_pass_t hp_phrase;
 			pc2_hash_pass_t hp_tag;
 			if(phrase->count == 0)
@@ -107,7 +109,7 @@ pc2_hash_pass_t pc2_argtable_config(int argc, char** argv)
 
 			const pc2_hash_pass_t final_hash = pc2_hash_pass_get_final(&hp_phrase, &hp_tag);
 
-			if (pc2_get_verbose())
+			if (pc2_is_verbose)
 			{
 				setColor(CYAN);
 				printf("Hash Phrase \t: ");
