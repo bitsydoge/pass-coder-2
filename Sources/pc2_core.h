@@ -32,7 +32,7 @@ void pc2_hash_pass_print(pc2_hash_pass_t* r_hp);
 void pc2_hash_pass_process(pc2_hash_pass_t* r_hp);
 void pc2_hash_pass_clean(pc2_hash_pass_t* r_hp);
 
-#if defined(PC2_OS_IS_WINDOWS)
+#if PC2_OS == PC2_OS_WINDOWS
 void pc2_check_run_from_console();
 #else
 #define pc2_check_run_from_console()

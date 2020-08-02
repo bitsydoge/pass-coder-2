@@ -6,11 +6,8 @@
 
 #include "rlutil.h"
 
-#if defined(PC2_OS_IS_WINDOWS)
+#if PC2_OS == PC2_OS_WINDOWS
 #include <windows.h>
-#endif
-
-#if defined(PC2_OS_IS_WINDOWS)
 #define STRDUP _strdup
 #else
 #define STRDUP strdup
@@ -90,7 +87,7 @@ pc2_hash_pass_t pc2_hash_pass_get_final(pc2_hash_pass_t* r_hp_passphrase, pc2_ha
 	return final_hash;
 }
 
-#if defined(PC2_OS_IS_WINDOWS)
+#if PC2_OS == PC2_OS_WINDOWS
 void pc2_check_run_from_console()
 {
 	HWND console_wnd = GetConsoleWindow();

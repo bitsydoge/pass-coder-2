@@ -5,7 +5,7 @@
 #include "rlutil.h"
 #include "argtable3.h"
 
-#if defined(PC2_USE_VLD) && defined(_DEBUG) && defined(PC2_OS_IS_WINDOWS)
+#if defined(PC2_USE_VLD) && defined(_DEBUG) && PC2_OS == PC2_OS_WINDOWS
 #include "vld.h"
 #endif
 
